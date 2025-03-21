@@ -1,0 +1,60 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.tenzi-playboard {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tenzi-dice {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+[data-locked="true"] {
+  background: #F7E6CA;
+  color: #594423;
+  border-color: #594423;
+}
+
+.element {
+  width: 6rem; /* w-24 */
+  height: 6rem; /* h-24 */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  background-color: white; /* bg-white */
+  border: 4px solid #1f2937; /* border-4 border-gray-800 */
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+}
