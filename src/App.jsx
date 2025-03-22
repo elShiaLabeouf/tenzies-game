@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import { tenziCollectionBuilder, tenziBuilder } from "./tenzi_builder"
+import { CongratsSign } from "./components/CongratsSign"
+
+const diceAmount = 3
 
 function App() {
-  const [tenzies, setTenzies] = useState(tenziCollectionBuilder(10))
-  
+  let [gameWon, setGameWon] = useState(false)
+  const [tenzies, setTenzies] = useState(tenziCollectionBuilder(diceAmount))
+  const tenziValuesArray = Object.values(tenzies).map(tenzi => tenzi.value)
+
   const rollTenzies = () => {
     const newTenziCollection = Object.assign({},
       ...Object.entries(tenzies).map(([tenziId, tenziAttrs]) => { 
@@ -19,6 +24,11 @@ function App() {
     const currentTenzi = tenzies[tenziId]
     setTenzies({...tenzies, [tenziId]: {...currentTenzi, isLocked: !currentTenzi.isLocked } })
   }
+
+  useEffect(() => {
+    if (tenziValuesArray.every(tenziValue => tenziValue === tenziValuesArray[0])) setGameWon(true)
+    
+  }, tenziValuesArray)
 
   return (
     <>
@@ -36,6 +46,7 @@ function App() {
           )
         }
         <button onClick={ rollTenzies }> Roll Tenzies</button>
+        { gameWon && <CongratsSign resetGame={ () => { setTenzies(tenziCollectionBuilder(diceAmount)); setGameWon(false) } }/>}
       </div>
     </>
   )
