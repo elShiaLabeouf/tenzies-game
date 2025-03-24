@@ -5,44 +5,14 @@
   text-align: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
 .tenzi-playboard {
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 10px;
-}
-
-.tenzi-dice {
-  border-radius: 5px;
-  border: 1px solid lightgray;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  cursor: pointer;
-}
-
-[data-locked="true"] {
-  background: #F7E6CA;
-  color: #594423;
-  border-color: #594423;
+  gap: 35px;
+  width: 400px;
+  height: 400px;
+  flex-wrap: wrap;
 }
 
 .congrats-sign-container {
@@ -63,4 +33,21 @@
 
 .congrats-fireworks {
   z-index: 1;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.rolled-times-sign {
+  display: flex;
+  gap: 3px;
+  color: rgb(0, 255, 255);
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }

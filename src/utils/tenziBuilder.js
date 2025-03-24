@@ -1,4 +1,4 @@
-import { randomAlphaNumeric, randomDiceValue } from "./randomizer"
+import { randomAlphaNumeric, randomDieValue } from "./randomizer"
 
 export function tenziCollectionBuilder(amount) {
   return Object.assign({}, ...Array.from({ length: amount }, () => tenziBuilder()));
@@ -6,7 +6,7 @@ export function tenziCollectionBuilder(amount) {
 
 export function tenziBuilder(id = randomAlphaNumeric(6)) {
   return {
-    [id]: { value: randomDiceValue(), isLocked: false }
+    [id]: { value: randomDieValue(), isLocked: false }
   };
 }
 

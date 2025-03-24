@@ -1,0 +1,17 @@
+<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clock face -->
+  <circle cx="12" cy="12" r="10"></circle>
+  
+  <!-- Minute hand (rotates 6deg per minute) -->
+  <g transform="rotate(0, 12, 12)">
+    <line x1="12" y1="12" x2="12" y2="6" class="minute-hand"/>
+  </g>
+  
+  <!-- Second hand (optional) -->
+  <g transform="rotate(0, 12, 12)">
+    <line x1="12" y1="12" x2="12" y2="5" class="second-hand"/>
+  </g>
+  
+  <!-- Center dot -->
+  <circle cx="12" cy="12" r="1" fill="currentColor"/>
+</svg>

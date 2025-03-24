@@ -7,6 +7,6 @@ export function randomAlphaNumeric(length) {
   return s.slice(0, length);
 }
 
-export function randomDiceValue() {
-  return Math.floor(Math.random() * 10) % 6 + 1
+export function randomDieValue() {
+  return Math.floor((Math.random() * 6) + 1)
 }

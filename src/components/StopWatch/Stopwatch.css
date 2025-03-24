@@ -1,0 +1,26 @@
+.stopwatch-container {
+  color: rgb(0, 255, 255);
+  display: flex;
+  gap: 5px;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.time-display {
+  text-align: right;
+  font-size: 26px;
+}
+
+.stopwatch-container svg {
+  padding-bottom: 1px;
+  position: absolute;
+  left: -30px;
+}
+.stopwatch-container svg g {
+  transition: transform 1s linear;
+}
