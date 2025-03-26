@@ -1,7 +1,30 @@
+import './Die.css'
+
+/**
+ * Die component representing a single die in the Tenzi game.
+ *
+ * @param {Object} props - Component props.
+ * @param {React.Ref} props.ref - A reference to the die's DOM element.
+ * @param {number} props.currentValue - The current face value of the die.
+ * @param {boolean} props.isLocked - Whether the die is locked.
+ * @param {Function} props.onClick - Callback function when the die is clicked.
+ * @param {string} props.tenziId - The unique ID of the die.
+ * @returns {JSX.Element} The rendered die component.
+ */
 export function Die({ ref, currentValue, isLocked, onClick, tenziId }) {
   return (
     <div className='tenzi-die-container'>
-      <div className={ `tenzi-die show-${currentValue}` } ref={ ref } data-locked={ isLocked } data-id={ tenziId } onClick={ onClick } data-value={ currentValue }>
+      <div 
+        className={ `tenzi-die show-${currentValue}` } 
+        ref={ ref } 
+        data-locked={ isLocked } 
+        data-id={ tenziId } 
+        onClick={ onClick } 
+        data-value={ currentValue }
+        role="button"
+        aria-label={`Die with value ${currentValue}${isLocked ? ', locked' : ', unlocked'}`}
+        aria-pressed={isLocked}
+      >
         <div className='side one'>
           <div className="dot one-1"></div>
         </div>
@@ -40,13 +63,3 @@ export function Die({ ref, currentValue, isLocked, onClick, tenziId }) {
   )
 }
 
-export function animateDieRoll(die, newDieValue) {
-  const currentValue = parseInt(die.getAttribute("data-value"))
-  if (currentValue !== newDieValue) {
-    die.classList.remove("reshuffle")
-    die.className.replace(`show-${currentValue}`, `show-${newDieValue}`);
-    return
-  }
-
-  die.classList.add("reshuffle")
-}

@@ -1,12 +1,14 @@
-# React + Vite
+# Tenzies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a game called Tenzies. Each player gets ten six-sided dice. Each player rolls their dice. Each player picks a number they want to collect (e.g., all 3s). Players keep the dice that match their chosen number by clicking on it and quickly re-roll the rest.
 
-Currently, two official plugins are available:
+Keep rolling and setting aside matching dice until all ten dice show the same number.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running
 
-## Expanding the ESLint configuration
+- npm install
+- npm run dev
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contact
+
+If you have any questions or need help, feel free to contact me at dmytro.lomako@gmail.com
