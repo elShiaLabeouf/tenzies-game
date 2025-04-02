@@ -1,6 +1,6 @@
 import { animateDieRoll } from '../utils/dieAnimations';
 import { randomDieValue } from '../utils/randomizer'
-import { createTenziCollection } from "../utils/tenziBuilder"
+import { createDieStateCollection } from "../utils/dieStateCollectionBuilder"
 import { diceInGame } from "../constants"
 
 /**
@@ -17,7 +17,7 @@ import { diceInGame } from "../constants"
 export function tenziesReducer(state, action) {
   switch (action.type) {
     case "INIT":
-      return createTenziCollection(diceInGame)
+      return createDieStateCollection(diceInGame)
 
     case "ROLL_DICE":
       return Object.entries(state).reduce((newState, [tenziId, tenzi]) => {

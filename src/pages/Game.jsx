@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef, useLayoutEffect, useReducer } from 'react'
-import './App.css'
-import { createTenziCollection, tenziBuilder } from "./utils/tenziBuilder.js"
-import { CongratsSign } from "./components/CongratsSign"
-import { Die } from "./components/Die"
-import { positionDice } from "./utils/circlePositioner.js"
-import AwesomeButton from './components/AwesomeButton.jsx';
-import { diceInGame } from './constants.js'
-import Stopwatch from './components/Stopwatch/Stopwatch.jsx'
-import { tenziesReducer } from './reducers/tenziesReducer.js'
+import './Game.css'
+import { createDieStateCollection } from "../utils/dieStateCollectionBuilder.js"
+import { CongratsSign } from "../components/CongratsSign.jsx"
+import { Die } from "../components/Die.jsx"
+import { positionDice } from "../utils/circlePositioner.js"
+import AwesomeButton from '../components/AwesomeButton.jsx';
+import { diceInGame } from '../constants.js'
+import Stopwatch from '../components/Stopwatch/Stopwatch.jsx'
+import { tenziesReducer } from '../reducers/tenziesReducer.js'
 
 // TODO: Consider adding a game state enum (PLAYING, PAUSED, WON) instead of multiple boolean states
-function App() {
+function Game() {
   const [gameWon, setGameWon]         = useState(false)
-  const [tenzies, dispatch]           = useReducer(tenziesReducer, createTenziCollection(diceInGame));
+  const [tenzies, dispatch]           = useReducer(tenziesReducer, createDieStateCollection(diceInGame));
   const [rolledTimes, setRolledTimes] = useState(0)
   const tenziValuesArray              = Object.values(tenzies).map(tenzi => tenzi.value)
   const tenziRefs                     = Object.fromEntries(Object.keys(tenzies).map(tenziId => [tenziId, useRef(null)]))
@@ -68,4 +68,4 @@ function App() {
   )
 }
 
-export default App
+export default Game

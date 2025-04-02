@@ -13,6 +13,7 @@ Keep rolling and setting aside matching dice until all ten dice show the same nu
 
 Run all tests: 
 - npm run test
+
 Run a single test:
 - npm test -- utils/dieAnimations.test.js
 
